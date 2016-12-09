@@ -19,4 +19,13 @@ public class Database {
 			
 		}
 	}
+
+	public boolean removeScholar(Scholar scholar){
+		try{
+			allScholars.remove(scholar);
+			return true;
+		} catch (Exception e){
+			return false;
+		}
+	}
 }
