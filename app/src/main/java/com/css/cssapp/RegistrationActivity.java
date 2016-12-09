@@ -27,7 +27,7 @@ public class RegistrationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (firstName.length() > 0 && lastName.length() > 0
-                        && userName.length() > 0 && password.length() > 0) {
+                        && userName.length() > 4 && password.length() > 7) {
                     Toast.makeText(getApplicationContext(),
                             "Registration Successful!", Toast.LENGTH_LONG).show();
                     Intent myIntent = new Intent(RegistrationActivity.this, MainActivity.class);
@@ -36,6 +36,13 @@ public class RegistrationActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),
                             "Please enter all the fields.", Toast.LENGTH_LONG).show();
                 }
+
+                if(userName.length()<5)
+                    Toast.makeText(getApplicationContext(),
+                            "Username contain more than 4 characters.", Toast.LENGTH_LONG).show();
+                if(userName.length()<5)
+                    Toast.makeText(getApplicationContext(),
+                            "Password contain more than 7 characters.", Toast.LENGTH_LONG).show();
             }
         });
     }
